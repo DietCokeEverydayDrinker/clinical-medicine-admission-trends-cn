@@ -4,7 +4,11 @@
 
 这个项目试图回答一个常见但很少有长期、跨省、专业级公开证据的问题：临床医学的录取热度和竞争位置，近几年是否真的在下降？
 
-[完整报告](REPORT.md) | [数据质量审计](DATA_QUALITY_AUDIT.md) | [分析口径](ANALYSIS_METHODS.md) | [全部数值结果](ANALYSIS_RESULTS_FIRST_PASS.md)
+[![报告预览：两张核心图指向完整报告](output/readme_preview/report_preview.png)](REPORT.md)
+
+**→ [打开完整报告：结论、方法、图注与数据边界](REPORT.md)**
+
+[完整报告](REPORT.md) | [讨论区](https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn/discussions) | [数据质量审计](DATA_QUALITY_AUDIT.md) | [分析口径](ANALYSIS_METHODS.md) | [全部数值结果](ANALYSIS_RESULTS_FIRST_PASS.md)
 
 ## 先看结论
 
@@ -84,10 +88,12 @@
 ├─ ANALYSIS_RESULTS_FIRST_PASS.md     # 全部数值结果
 ├─ REPORT_FIGURE_SET.md               # 核心图与支持性图分层
 ├─ scripts/
+│  ├─ build_readme_preview.py         # README 首屏报告预览图
 │  ├─ analyze_trends.py               # 临床分析层和图件生成
 │  ├─ validate_trend_analysis.py      # 表和图自动校验
 │  └─ validate_report.py              # 报告链接、图件哈希和措辞边界
 └─ output/
+   ├─ readme_preview/                 # README 首屏报告预览图
    ├─ report_figures/                 # 报告使用的 8 张核心图
    ├─ figures/                        # 全部临床支持性图
    ├─ clinical_panel_*.csv            # 临床公开分析面板
@@ -103,7 +109,8 @@ Python 依赖见 `requirements.txt`。
 python -m venv .venv-analysis
 .\.venv-analysis\Scripts\python.exe -m pip install -r requirements.txt
 
-.\.venv-analysis\Scripts\python.exe -m py_compile scripts\analyze_trends.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe -m py_compile scripts\build_readme_preview.py scripts\analyze_trends.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe scripts\build_readme_preview.py
 .\.venv-analysis\Scripts\python.exe scripts\analyze_trends.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_trend_analysis.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_report.py
@@ -133,4 +140,4 @@ python -m venv .venv-analysis
 
 ## 反馈
 
-如果发现来源错误、口径问题或可补齐的公开文件，欢迎在 GitHub Issues 中附上具体页面、附件、年份、省份和校验信息。涉及数据处理和结论的修改，请尽量提供可复现证据。
+如果发现来源错误、口径问题或可补齐的公开文件，欢迎在 [Discussions](https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn/discussions) 讨论，或在 GitHub Issues 中附上具体页面、附件、年份、省份和校验信息。涉及数据处理和结论的修改，请尽量提供可复现证据。

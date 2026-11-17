@@ -13,6 +13,7 @@ OUTPUT = ROOT / "output"
 REPORT = ROOT / "REPORT.md"
 FIGURE_ROOT = OUTPUT / "figures"
 REPORT_FIGURE_ROOT = OUTPUT / "report_figures"
+README_PREVIEW = OUTPUT / "readme_preview" / "report_preview.png"
 
 CORE_FIGURES = [
     "fig_heatmap_all_clinical.png",
@@ -74,6 +75,11 @@ def main() -> None:
     public_texts = [text, readme_text, audit_text, figure_set_text]
     for phrase in FORBIDDEN_CLAIMS:
         assert all(phrase not in item for item in public_texts), phrase
+
+    assert README_PREVIEW.exists(), "README report preview is missing"
+    assert README_PREVIEW.stat().st_size > 100_000, "README report preview is too small"
+    assert "output/readme_preview/report_preview.png" in readme_text
+    assert "github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn/discussions" in readme_text
 
     assert "2025 年是临床医学本科录取竞争位置一个清晰的下移节点" in text
     assert "不能据此判断职业前景、就业质量或行业寿命" in text
