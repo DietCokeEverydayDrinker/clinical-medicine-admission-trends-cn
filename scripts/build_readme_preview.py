@@ -54,22 +54,6 @@ def fit_image(image: Image.Image, size: tuple[int, int]) -> Image.Image:
     )
 
 
-def draw_arrow(
-    draw: ImageDraw.ImageDraw,
-    start: tuple[int, int],
-    end: tuple[int, int],
-    *,
-    color: str = ACCENT,
-    width: int = 8,
-) -> None:
-    draw.line((start, end), fill=color, width=width)
-    x, y = end
-    draw.polygon(
-        ((x, y + 10), (x - 16, y - 20), (x + 16, y - 20)),
-        fill=color,
-    )
-
-
 def main() -> None:
     canvas = Image.new("RGB", (WIDTH, HEIGHT), BACKGROUND)
     draw = ImageDraw.Draw(canvas)
@@ -109,22 +93,21 @@ def main() -> None:
         fitted = fit_image(image, (x1 - x0 - 56, y1 - y0 - 104))
         canvas.paste(fitted, (x0 + 28, y0 + 76))
 
-    draw_arrow(draw, (470, 720), (820, 810))
-    draw_arrow(draw, (1330, 720), (980, 810))
-
     callout = (520, 820, 1280, 940)
     draw.rounded_rectangle(callout, radius=30, fill=ACCENT)
     draw.text(
-        (610, 846),
-        "↓  点击查看完整报告",
+        (900, 865),
+        "点击查看完整报告",
         fill="white",
         font=callout_font,
+        anchor="mm",
     )
     draw.text(
-        (610, 898),
+        (900, 910),
         "结论、方法、图注、数据边界与复现材料",
         fill=ACCENT_LIGHT,
         font=callout_small_font,
+        anchor="mm",
     )
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
