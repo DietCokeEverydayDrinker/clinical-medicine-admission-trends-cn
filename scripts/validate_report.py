@@ -56,7 +56,7 @@ def sha256(path: Path) -> str:
 
 def local_targets(text: str) -> list[str]:
     return [
-        target
+        target.split("#", 1)[0].split("?", 1)[0]
         for target in re.findall(r"\]\(([^)]+)\)", text)
         if not target.startswith(("http://", "https://", "#"))
     ]
