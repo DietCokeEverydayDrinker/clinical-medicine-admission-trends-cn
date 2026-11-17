@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "province_track_metric_rows": 1604,
+  "curve_rows": 60,
+  "year_change_rows": 54,
+  "slogan_test_rows": 3,
+  "source_sensitivity_rows": 9,
+  "balanced_recent_rows": 92,
+  "balanced_long_rows": 306,
+  "premium_province_rows": 206,
+  "premium_school_rows": 1038,
+  "school_change_rows": 3073,
+  "school_count_change_rows": 67,
+  "leave_one_province_out_rows": 134,
+  "school_tier_rows": 198,
+  "cumulative_change_rows": 306,
+  "figures": 15
+}

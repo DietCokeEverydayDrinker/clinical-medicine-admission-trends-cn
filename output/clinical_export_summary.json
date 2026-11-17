@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "panel_rows": {
+    "clinical_panel_2017_2026_available.csv": 32858,
+    "clinical_panel_2017_2026_recovered.csv": 36866,
+    "clinical_panel_2017_2026_candidate_percentile.csv": 36866
+  },
+  "audit_rows": {
+    "clinical_data_completion_ledger.csv": 310,
+    "clinical_metric_coverage_by_year.csv": 10,
+    "clinical_numerator_310_cell_audit.csv": 310,
+    "clinical_candidate_distribution_remaining_gaps.csv": 11
+  },
+  "source_manifest_rows": 1745,
+  "clinical_source_manifest_rows": 1728,
+  "excluded_rows": 17
+}

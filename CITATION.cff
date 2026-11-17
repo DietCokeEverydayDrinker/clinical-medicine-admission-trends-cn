@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite the repository and report."
+title: "Clinical Medicine Admission Competitiveness in Mainland China, 2017-2026"
+type: dataset
+authors:
+  - name: "DietCokeEverydayDrinker"
+repository-code: "https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn"
+url: "https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn"
+license: MIT
+license-url: "https://opensource.org/license/mit"
+date-released: "2026-11-18"
+abstract: "A reproducible provincial analysis of clinical-medicine admission percentiles in mainland China from 2017 to 2026."

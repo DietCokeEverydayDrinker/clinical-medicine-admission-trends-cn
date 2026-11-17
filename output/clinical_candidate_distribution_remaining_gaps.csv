@@ -1,0 +1,12 @@
+﻿province,year,status,reason,accepted_source_found,next_action
+新疆,2017,no_complete_public_series_found,公开转载表缺少 624–585 分的 40 行；稻壳汇预览只公开 2022 年页面，未绕过付费墙,False,继续查找完整官方页面或可核验的历史归档
+西藏,2017,not_published_publicly,公开检索未找到完整一分一段表；官方站点历史栏目未给出可用表,False,保持空值并等待官方档案或完整转载
+西藏,2018,not_published_publicly,公开检索未找到完整一分一段表；重庆移通学院候选表的总人数与西藏口径不符,False,保持空值；拒绝不兼容表
+西藏,2019,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2020,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2021,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2022,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2023,not_published_publicly,公开资料明确称西藏不公布一分一段表,False,保持空值并继续查找官方档案
+西藏,2024,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2025,not_published_publicly,公开检索未找到完整一分一段表,False,保持空值并继续查找官方档案
+西藏,2026,not_published_publicly,公开检索未找到完整一分一段表；2026 年目标记录保持为空,False,保持空值并继续查找官方档案

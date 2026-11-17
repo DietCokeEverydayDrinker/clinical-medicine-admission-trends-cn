@@ -1,0 +1,4 @@
+﻿track,track_label,paired_cells,spearman_professional_vs_candidate
+all_clinical,临床医学（全部）,264,0.42619087915230625
+five_year,临床医学（五年制）,264,0.41264118539891653
+eight_year,临床医学（八年制）,226,0.43662113494300714
