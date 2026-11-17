@@ -4,7 +4,7 @@
 
 这个项目试图回答一个常见但很少有长期、跨省、专业级公开证据的问题：临床医学的录取热度和竞争位置，近几年是否真的在下降？
 
-[![报告预览：两张核心图指向完整报告](output/readme_preview/report_preview.png?v=64ee1449)](REPORT.md)
+[![报告预览：两张核心图指向完整报告](output/readme_preview/report_preview_v2.png)](REPORT.md)
 
 **→ [打开完整报告：结论、方法、图注与数据边界](REPORT.md)**
 

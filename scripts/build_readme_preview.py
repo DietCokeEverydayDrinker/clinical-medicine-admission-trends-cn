@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 FIGURE_ROOT = ROOT / "output" / "report_figures"
-OUTPUT = ROOT / "output" / "readme_preview" / "report_preview.png"
+OUTPUT = ROOT / "output" / "readme_preview" / "report_preview_v2.png"
 
 WIDTH = 1800
 HEIGHT = 1000
