@@ -21,8 +21,6 @@ import pdfplumber
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "official_endpoints"
-SUMMARY = OUTPUT / "official_endpoint_parse_summary.json"
-CLINICAL_OUTPUT = OUTPUT / "clinical_official_endpoints_2025_2026.csv"
 
 EXPECTED_PARSED_ROWS = {
     ("山东", 2025): 21_380,
@@ -431,12 +429,46 @@ def main() -> None:
         required=True,
         help="Directory containing the official endpoint source files.",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=OUTPUT,
+        help="Directory for the parse summary and clinical subset.",
+    )
+    parser.add_argument(
+        "--province",
+        action="append",
+        default=[],
+        help="Limit parsing to one or more province names.",
+    )
+    parser.add_argument(
+        "--year",
+        action="append",
+        type=int,
+        default=[],
+        help="Limit parsing to one or more years.",
+    )
     args = parser.parse_args()
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+
+    selected_sources = {
+        key: filename
+        for key, filename in SOURCE_FILES.items()
+        if (not args.province or key[0] in args.province)
+        and (not args.year or key[1] in args.year)
+    }
+    if not selected_sources:
+        raise SystemExit("No official endpoint sources matched the requested filter.")
 
     parsed = []
-    summary: dict[str, object] = {"sources": []}
-    for (province, year), filename in SOURCE_FILES.items():
+    summary: dict[str, object] = {
+        "selection": {
+            "provinces": sorted({province for province, _ in selected_sources}),
+            "years": sorted({year for _, year in selected_sources}),
+        },
+        "sources": [],
+    }
+    for (province, year), filename in selected_sources.items():
         path = args.input_dir / filename
         if not path.exists():
             summary["sources"].append(
@@ -542,8 +574,14 @@ def main() -> None:
     combined = combined.sort_values(
         ["year", "province", "university", "major", "source_row"]
     )
-    combined.to_csv(CLINICAL_OUTPUT, index=False, encoding="utf-8-sig")
-    summary["clinical_output"] = str(CLINICAL_OUTPUT.relative_to(ROOT))
+    clinical_output = args.output_dir / "clinical_official_endpoints_2025_2026.csv"
+    summary_path = args.output_dir / "official_endpoint_parse_summary.json"
+    combined.to_csv(clinical_output, index=False, encoding="utf-8-sig")
+    try:
+        clinical_output_display = str(clinical_output.resolve().relative_to(ROOT))
+    except ValueError:
+        clinical_output_display = str(clinical_output.resolve())
+    summary["clinical_output"] = clinical_output_display
     summary["clinical_output_rows"] = int(len(combined))
     summary["all_parser_checks_passed"] = all(
         not str(source.get("status", "")).startswith(
@@ -555,7 +593,7 @@ def main() -> None:
         source.get("clinical_rows_vs_panel") == 0
         for source in summary["sources"]
     )
-    SUMMARY.write_text(
+    summary_path.write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )

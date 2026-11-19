@@ -63,10 +63,31 @@ finally {{
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--province",
+        action="append",
+        default=[],
+        help="Limit the download to one or more province names.",
+    )
+    parser.add_argument(
+        "--year",
+        action="append",
+        type=int,
+        default=[],
+        help="Limit the download to one or more years.",
+    )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = pd.read_csv(MANIFEST, dtype=str)
+    if args.province:
+        manifest = manifest[manifest["province"].isin(args.province)]
+    if args.year:
+        manifest = manifest[manifest["year"].astype(int).isin(args.year)]
+    if manifest.empty:
+        raise SystemExit("No official endpoint sources matched the requested filter.")
+    print(f"Selected {len(manifest)} source-years for verification.")
+
     failures = []
     for row in manifest.itertuples(index=False):
         destination = args.output_dir / row.file_name

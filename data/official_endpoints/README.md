@@ -8,11 +8,28 @@ committed because they total roughly 24 MB. Download them with:
 python scripts/fetch_official_endpoints.py --output-dir data/official_endpoints_cache
 ```
 
+For a paired QC task, download only the assigned province-year:
+
+```powershell
+python scripts/fetch_official_endpoints.py `
+  --output-dir data/official_endpoints_cache `
+  --province 山东 --year 2025
+```
+
 The fetcher verifies both file size and SHA-256. Parse the downloaded files
 with:
 
 ```powershell
 python scripts/parse_official_endpoints.py --input-dir data/official_endpoints_cache
+```
+
+Write an isolated subset output without touching the canonical endpoint files:
+
+```powershell
+python scripts/parse_official_endpoints.py `
+  --input-dir data/official_endpoints_cache `
+  --output-dir output/official_endpoints/qc/shandong_2025 `
+  --province 山东 --year 2025
 ```
 
 The parser retains the full offer pool through percentile construction, writes
