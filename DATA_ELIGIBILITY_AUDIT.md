@@ -126,6 +126,25 @@
 面板。面向全国原创 Article 的升级需要重建贵州和重庆 2026 端点，而不是只追加
 2025 附件。
 
+### 端点行数差的逐项核对
+
+[`scripts/build_official_endpoint_reconciliation.py`](scripts/build_official_endpoint_reconciliation.py)
+对上述三处差异做一对一行级匹配，并写出
+[`official_endpoint_panel_reconciliation.csv`](output/official_endpoints/official_endpoint_panel_reconciliation.csv)
+及对应 JSON 汇总。三处比较都使用“普通类本科批”：
+
+| 来源 | 官方行 | 面板行 | 差值 | 行级结论 |
+|---|---:|---:|---:|---|
+| 重庆 2025 | 171 | 172 | −1 | 面板多 1 条中外合作重复：同一分数、位次和项目同时以重庆医科大学及联合学院名称出现 |
+| 重庆 2026 | 183 | 180 | +3 | 官方多 3 条普通常规记录，均为字母数字院校代码；面板未保留 |
+| 贵州 2026 | 189 | 178 | +11 | 官方多 10 条普通常规和 1 条国家专项记录 |
+
+官方面板合计多出 14 条记录，其中 13 条为普通常规、1 条为国家专项；面板
+另有 1 条中外合作重复。贵州 2026 官方表的数量字段是投档数，重庆 2025 和
+2026 官方表未报告数量字段。这 13 条普通常规漏行需要在未来“官方到官方”
+升级时回接主候选；当前全国结果仍只描述已编译面板，不能把“2026 来源为
+官方”解释为该来源的完整专业池已全部进入全国估计。
+
 ## 敏感性分析
 
 [`scripts/build_eligibility_fields.py`](scripts/build_eligibility_fields.py)

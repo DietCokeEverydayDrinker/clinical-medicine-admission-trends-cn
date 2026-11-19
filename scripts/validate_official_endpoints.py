@@ -7,6 +7,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from build_official_endpoint_reconciliation import build_reconciliation
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "official_endpoints"
@@ -73,6 +75,9 @@ def main() -> None:
             "explicit_eight_year",
         }
     ).all()
+    _, reconciliation = build_reconciliation()
+    assert reconciliation["total_official_only_rows"] == 14
+    assert reconciliation["total_panel_only_rows"] == 1
 
     result = {
         "sources": len(summary["sources"]),
@@ -81,6 +86,10 @@ def main() -> None:
         "panel_reconciliation_deltas": {
             f"{province}_{year}": delta
             for (province, year), delta in observed_deltas.items()
+        },
+        "row_reconciliation": {
+            "official_only": reconciliation["total_official_only_rows"],
+            "panel_only": reconciliation["total_panel_only_rows"],
         },
         "status": "passed",
     }

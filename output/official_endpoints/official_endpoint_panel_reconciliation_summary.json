@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "province": "重庆",
+      "year": 2025,
+      "official_rows": 171,
+      "panel_rows": 172,
+      "matched_rows": 171,
+      "official_only_rows": 0,
+      "panel_only_rows": 1,
+      "official_only_plan_types": {},
+      "batch": [
+        "普通类本科批"
+      ]
+    },
+    {
+      "province": "重庆",
+      "year": 2026,
+      "official_rows": 183,
+      "panel_rows": 180,
+      "matched_rows": 180,
+      "official_only_rows": 3,
+      "panel_only_rows": 0,
+      "official_only_plan_types": {
+        "ordinary_regular": 3
+      },
+      "batch": [
+        "普通类本科批"
+      ]
+    },
+    {
+      "province": "贵州",
+      "year": 2026,
+      "official_rows": 189,
+      "panel_rows": 178,
+      "matched_rows": 178,
+      "official_only_rows": 11,
+      "panel_only_rows": 0,
+      "official_only_plan_types": {
+        "national_special": 1,
+        "ordinary_regular": 10
+      },
+      "batch": [
+        "普通类本科批"
+      ]
+    }
+  ],
+  "total_official_only_rows": 14,
+  "total_panel_only_rows": 1,
+  "status": "passed"
+}
