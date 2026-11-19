@@ -1,0 +1,11 @@
+{
+  "sources": 12,
+  "clinical_rows": 2336,
+  "unique_offer_keys": 2336,
+  "panel_reconciliation_deltas": {
+    "重庆_2025": -1,
+    "贵州_2026": 11,
+    "重庆_2026": 3
+  },
+  "status": "passed"
+}

@@ -102,6 +102,30 @@
 直接改变现有百分位算法。任何招生规模加权、计划完成率或录取概率分析都必须
 先完成字段口径核验。
 
+## 2025–2026 官方端点重建
+
+六个省级单位在 2025 和 2026 两端均可取得官方专业级投档表。直接附件、文件
+大小和 SHA-256 记录在
+[`data/official_endpoints/source_manifest.csv`](data/official_endpoints/source_manifest.csv)，
+下载与解析命令见同目录 README。
+
+重建脚本从完整专业池计算 `admission_percentile`，然后输出临床医学子集：
+
+- [`clinical_official_endpoints_2025_2026.csv`](output/official_endpoints/clinical_official_endpoints_2025_2026.csv)
+- [`official_endpoint_parse_summary.json`](output/official_endpoints/official_endpoint_parse_summary.json)
+- [`official_endpoint_validation.json`](output/official_endpoints/official_endpoint_validation.json)
+
+山东、河北、辽宁、浙江的 2026 官方解析与当前面板行数一致，百分位差异均在
+舍入范围内。贵州 2026 的官方 PDF 包含 1–18,973 的连续唯一序号，其中 80 条
+没有正的最低分或位次；可用于百分位的记录为 18,893 条，识别到 189 条临床医学
+记录，而当前面板为 178 条。重庆 2025 官方表识别 171 条临床记录，当前面板为
+172 条；2026 官方表识别 183 条，当前面板为 180 条，并遗漏 242 条使用字母
+数字院校代码的合法记录。
+
+因此，“2026 来源为官方”记录的是提供方，并不自动等于完整专业池已经进入
+面板。面向全国原创 Article 的升级需要重建贵州和重庆 2026 端点，而不是只追加
+2025 附件。
+
 ## 敏感性分析
 
 [`scripts/build_eligibility_fields.py`](scripts/build_eligibility_fields.py)
