@@ -1,0 +1,29 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "2",
+    "list": [
+      {
+        "prov_name": "重庆市",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4150014008",
+        "school_name": "重庆三峡医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "重庆市",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4150014009",
+        "school_name": "重庆医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

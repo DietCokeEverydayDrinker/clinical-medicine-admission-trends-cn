@@ -1,0 +1,83 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "8",
+    "list": [
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142010955",
+        "school_name": "黄冈职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012051",
+        "school_name": "湖北职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012354",
+        "school_name": "襄阳职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012740",
+        "school_name": "仙桃职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012951",
+        "school_name": "湖北中医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012979",
+        "school_name": "湖北三峡职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142012980",
+        "school_name": "随州职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4142013250",
+        "school_name": "湖北恩施学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

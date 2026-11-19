@@ -1,0 +1,20 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "1",
+    "list": [
+      {
+        "prov_name": "广西壮族自治区",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4145014313",
+        "school_name": "广西卫生职业技术学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

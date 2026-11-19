@@ -1,0 +1,38 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "3",
+    "list": [
+      {
+        "prov_name": "江苏省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4132012682",
+        "school_name": "江苏医药职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江苏省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4132012688",
+        "school_name": "苏州卫生职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江苏省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4132014255",
+        "school_name": "江苏卫生健康职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

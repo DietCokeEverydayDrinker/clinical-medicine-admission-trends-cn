@@ -1,0 +1,74 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "7",
+    "list": [
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113012785",
+        "school_name": "唐山职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113012884",
+        "school_name": "邢台医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113013779",
+        "school_name": "沧州医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113014018",
+        "school_name": "石家庄医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113014158",
+        "school_name": "石家庄人民医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113014281",
+        "school_name": "承德护理职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河北省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4113014335",
+        "school_name": "廊坊卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

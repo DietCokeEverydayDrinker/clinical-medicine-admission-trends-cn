@@ -1,0 +1,56 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "5",
+    "list": [
+      {
+        "prov_name": "江西省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4136010888",
+        "school_name": "江西医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江西省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4136011843",
+        "school_name": "九江学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江西省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4136013424",
+        "school_name": "宜春职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江西省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4136014569",
+        "school_name": "赣南卫生健康职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "江西省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4136014656",
+        "school_name": "萍乡卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

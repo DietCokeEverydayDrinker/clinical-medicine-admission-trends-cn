@@ -1,0 +1,119 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "12",
+    "list": [
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141011069",
+        "school_name": "开封大学",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141011834",
+        "school_name": "黄河科技学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141012948",
+        "school_name": "郑州健康学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141013780",
+        "school_name": "漯河医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141013781",
+        "school_name": "南阳医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141013782",
+        "school_name": "商丘医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141013784",
+        "school_name": "信阳职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141014169",
+        "school_name": "河南科技职业大学",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141014349",
+        "school_name": "河南护理职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141014383",
+        "school_name": "洛阳职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141014466",
+        "school_name": "河南医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "河南省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4141014597",
+        "school_name": "濮阳医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

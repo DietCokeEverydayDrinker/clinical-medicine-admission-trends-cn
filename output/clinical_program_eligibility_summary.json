@@ -1,0 +1,113 @@
+{
+  "panel_rows": 36866,
+  "institution_year_pairs": 2819,
+  "vocational_registry_rows": 1397,
+  "match_status_counts": {
+    "alias_prior_year": 91,
+    "military_manual": 44,
+    "name_match_future_year": 7,
+    "name_match_prior_year": 2617,
+    "parent_campus_prefix_prior_year": 58,
+    "unresolved": 2
+  },
+  "program_degree_level_counts": {
+    "undergraduate": 35395,
+    "vocational_three_year": 666,
+    "unresolved": 507,
+    "ambiguous_dual_offer": 298
+  },
+  "manual_program_level_overrides_applied": 1,
+  "admission_plan_type_counts": {
+    "ordinary_regular": 35801,
+    "sino_foreign": 353,
+    "directed_employment": 254,
+    "public_funded_medical": 139,
+    "local_special": 76,
+    "national_special": 76,
+    "ethnic_class": 65,
+    "preparatory": 60,
+    "university_special": 32,
+    "other_special": 10
+  },
+  "count_definition_counts": {
+    "not_reported": 28789,
+    "reported_count_definition_not_verified": 7684,
+    "planned_places": 215,
+    "filed_candidates": 178
+  },
+  "primary_eligible_candidate_rows": 34484,
+  "recent_sensitivity_rows": [
+    {
+      "scenario": "current_all_clinical",
+      "records_included": 36866,
+      "records_excluded": 0,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.007955833333336,
+      "median_all_change_all_clinical": -8.963974999999998,
+      "mean_balanced_change_all_clinical": -0.7849733333333331,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    },
+    {
+      "scenario": "exclude_special_entry",
+      "records_included": 36154,
+      "records_excluded": 712,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.258844166666668,
+      "median_all_change_all_clinical": -10.8187,
+      "mean_balanced_change_all_clinical": -0.8427849999999999,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    },
+    {
+      "scenario": "undergraduate_program_only",
+      "records_included": 35395,
+      "records_excluded": 1471,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.152945833333336,
+      "median_all_change_all_clinical": -8.4998875,
+      "mean_balanced_change_all_clinical": -0.8050866666666664,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    },
+    {
+      "scenario": "ordinary_undergraduate_primary",
+      "records_included": 34484,
+      "records_excluded": 2382,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.343570833333333,
+      "median_all_change_all_clinical": -9.661075000000004,
+      "mean_balanced_change_all_clinical": -0.843894166666667,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    },
+    {
+      "scenario": "ordinary_undergraduate_ambiguous_upper_bound",
+      "records_included": 34771,
+      "records_excluded": 2095,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.308320833333337,
+      "median_all_change_all_clinical": -9.661075000000004,
+      "mean_balanced_change_all_clinical": -0.8308225000000002,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    },
+    {
+      "scenario": "ordinary_undergraduate_with_sino_foreign",
+      "records_included": 34819,
+      "records_excluded": 2047,
+      "recent_eligible_provinces_all_clinical": 30,
+      "recent_eligible_provinces_five_year": 30,
+      "recent_eligible_provinces_eight_year": 7,
+      "mean_all_change_all_clinical": -10.40320416666667,
+      "median_all_change_all_clinical": -9.913075000000003,
+      "mean_balanced_change_all_clinical": -0.8628983333333333,
+      "median_balanced_change_all_clinical": -1.4254750000000023
+    }
+  ]
+}

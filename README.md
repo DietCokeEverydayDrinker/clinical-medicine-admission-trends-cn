@@ -41,10 +41,12 @@
 
 310/310 只表示“有记录”，不表示每个省年都有完整专业池。曲线另要求每个省年至少有 3 所院校。
 
-当前面板仍待一次纳入资格重建。审计发现专科层次院校、专项计划、民族班、
-定向就业和中外合作项目混入“普通本科五年制”标签；方向性敏感性结果保持为负，
-但精确均值会随纳入规则改变。重建完成前，不将当前精确幅度视为最终主口径。
-详见 [研究纳入资格审计](DATA_ELIGIBILITY_AUDIT.md)。
+资格字段已按教育部普通高校名单、三年制临床医学专业备案和招生计划层级重建。
+普通本科主候选包含 34,484 条记录；专科、专项/分流、中外合作和 298 条专业
+层次无法区分的记录均单列。30 个可比省级单位中，普通本科主候选的省均变化为
+−10.34 个百分点，固定同校变化为 −0.84 个百分点。将模糊记录全部按本科纳入
+后，省均变化仍为 −10.31 个百分点。详见
+[研究纳入资格审计](DATA_ELIGIBILITY_AUDIT.md)。
 
 ## 核心图件
 
@@ -93,11 +95,17 @@
 ├─ ANALYSIS_METHODS.md                # 指标和统计方法
 ├─ ANALYSIS_RESULTS_FIRST_PASS.md     # 全部数值结果
 ├─ REPORT_FIGURE_SET.md               # 核心图与支持性图分层
+├─ data/
+│  ├─ manual_program_level_overrides.csv
+│  └─ moe/                             # 教育部来源缓存与哈希清单
 ├─ scripts/
 │  ├─ build_readme_preview.py         # README 首屏报告预览图
 │  ├─ audit_eligibility.py            # 资格标记和 2025-2026 敏感性
+│  ├─ build_eligibility_fields.py     # 专业层次、招生类型与数量口径重建
 │  ├─ build_source_crosswalk.py       # 分析来源与来源清单逐文件对照
 │  ├─ analyze_trends.py               # 临床分析层和图件生成
+│  ├─ fetch_moe_sources.py            # 教育部来源缓存和哈希清单
+│  ├─ validate_eligibility_fields.py  # 资格字段与敏感性自动校验
 │  ├─ validate_trend_analysis.py      # 表和图自动校验
 │  └─ validate_report.py              # 报告链接、图件哈希和措辞边界
 └─ output/
@@ -117,11 +125,14 @@ Python 依赖见 `requirements.txt`。
 python -m venv .venv-analysis
 .\.venv-analysis\Scripts\python.exe -m pip install -r requirements.txt
 
-.\.venv-analysis\Scripts\python.exe -m py_compile scripts\build_readme_preview.py scripts\audit_eligibility.py scripts\build_source_crosswalk.py scripts\analyze_trends.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe -m py_compile scripts\build_readme_preview.py scripts\audit_eligibility.py scripts\build_eligibility_fields.py scripts\build_source_crosswalk.py scripts\fetch_moe_sources.py scripts\analyze_trends.py scripts\validate_eligibility_fields.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe scripts\fetch_moe_sources.py
 .\.venv-analysis\Scripts\python.exe scripts\build_readme_preview.py
 .\.venv-analysis\Scripts\python.exe scripts\audit_eligibility.py
+.\.venv-analysis\Scripts\python.exe scripts\build_eligibility_fields.py
 .\.venv-analysis\Scripts\python.exe scripts\build_source_crosswalk.py
 .\.venv-analysis\Scripts\python.exe scripts\analyze_trends.py
+.\.venv-analysis\Scripts\python.exe scripts\validate_eligibility_fields.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_trend_analysis.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_report.py
 ```

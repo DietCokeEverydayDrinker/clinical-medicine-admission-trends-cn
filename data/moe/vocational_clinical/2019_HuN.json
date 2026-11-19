@@ -1,0 +1,110 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "11",
+    "list": [
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143010547",
+        "school_name": "邵阳学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143010823",
+        "school_name": "长沙医学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143010827",
+        "school_name": "长沙民政职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143012214",
+        "school_name": "湖南医药学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143012301",
+        "school_name": "永州职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143012739",
+        "school_name": "湖南环境生物职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143012846",
+        "school_name": "湘潭医卫职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143013038",
+        "school_name": "岳阳职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143013039",
+        "school_name": "常德职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143014097",
+        "school_name": "益阳医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "湖南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4143014358",
+        "school_name": "长沙卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

@@ -1,0 +1,38 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "3",
+    "list": [
+      {
+        "prov_name": "浙江省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4133010347",
+        "school_name": "湖州师范学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "浙江省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4133012061",
+        "school_name": "金华职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "浙江省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4133013023",
+        "school_name": "杭州医学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

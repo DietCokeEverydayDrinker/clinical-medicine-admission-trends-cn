@@ -1,0 +1,47 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "4",
+    "list": [
+      {
+        "prov_name": "吉林省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4122010847",
+        "school_name": "辽源职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "吉林省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4122011823",
+        "school_name": "长春医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "吉林省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4122013706",
+        "school_name": "吉林医药学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "吉林省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4122013743",
+        "school_name": "白城医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}
