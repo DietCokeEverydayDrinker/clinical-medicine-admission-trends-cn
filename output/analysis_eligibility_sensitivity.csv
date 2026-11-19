@@ -1,0 +1,6 @@
+﻿scenario,records_included,records_excluded,recent_eligible_provinces_all_clinical,recent_eligible_provinces_five_year,recent_eligible_provinces_eight_year,mean_all_change_all_clinical,median_all_change_all_clinical,mean_balanced_change_all_clinical,median_balanced_change_all_clinical
+current_all_clinical,36866,0,30,30,7,-10.007955833333336,-8.963974999999998,-0.7849733333333331,-1.4254750000000023
+exclude_special_entry,36168,698,30,30,7,-10.258844166666668,-10.8187,-0.8427849999999999,-1.4254750000000023
+exclude_vocational_name_rule,36208,658,30,30,7,-10.125121666666667,-8.612299999999998,-0.7920149999999997,-1.4254750000000023
+core_ordinary,35643,1223,30,30,7,-10.379293333333338,-9.913075000000003,-0.8498266666666666,-1.4254750000000023
+strict_ordinary,35292,1574,30,30,7,-10.31966,-9.661075000000004,-0.8308225000000002,-1.4254750000000023
