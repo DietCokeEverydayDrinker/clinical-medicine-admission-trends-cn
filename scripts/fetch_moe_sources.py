@@ -97,6 +97,32 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def normalize_json_line_endings(payload: bytes) -> bytes:
+    """Normalize text JSON so hashes do not depend on Git checkout settings."""
+    return payload.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
+def normalize_vocational_cache() -> int:
+    changed = 0
+    for path in sorted(VOCATIONAL.glob("*.json")):
+        payload = path.read_bytes()
+        normalized = normalize_json_line_endings(payload)
+        if normalized != payload:
+            path.write_bytes(normalized)
+            changed += 1
+    return changed
+
+
+def previous_access_dates() -> dict[str, str]:
+    if not MANIFEST.exists():
+        return {}
+    with MANIFEST.open(encoding="utf-8-sig", newline="") as handle:
+        return {
+            row["file_path"]: row.get("accessed_date", "")
+            for row in csv.DictReader(handle)
+        }
+
+
 def directory_source_url(mirror_path: str) -> str:
     encoded = quote(mirror_path, safe="/")
     return (
@@ -144,7 +170,9 @@ def ensure_cache_from_legacy() -> None:
     for source in (LEGACY / "vocational_clinical").glob("*.json"):
         destination = VOCATIONAL / source.name
         if not destination.exists():
-            destination.write_bytes(source.read_bytes())
+            destination.write_bytes(
+                normalize_json_line_endings(source.read_bytes())
+            )
 
 
 def fetch_directory_file(year: int, source_path: str) -> None:
@@ -200,21 +228,24 @@ def assert_vocational_cache_complete() -> None:
 
 
 def write_manifest() -> None:
+    normalize_vocational_cache()
     rows = []
-    accessed = date.today().isoformat()
+    access_dates = previous_access_dates()
+    default_accessed = date.today().isoformat()
     for year, mirror_path in DIRECTORY_PATHS.items():
         path = CACHE / f"moe_universities_{year}.xls"
+        relative = str(path.relative_to(ROOT)).replace("\\", "/")
         rows.append(
             {
                 "source_kind": "institution_directory",
                 "year": year,
                 "province_slug": "",
-                "file_path": str(path.relative_to(ROOT)).replace("\\", "/"),
+                "file_path": relative,
                 "sha256": sha256(path),
                 "bytes": path.stat().st_size,
                 "source_url": directory_source_url(mirror_path),
                 "official_page_url": OFFICIAL_PAGES.get(year, ""),
-                "accessed_date": accessed,
+                "accessed_date": access_dates.get(relative, default_accessed),
             }
         )
     for year in VOCATIONAL_YEARS:
@@ -223,22 +254,27 @@ def write_manifest() -> None:
             payload = json.loads(path.read_text(encoding="utf-8"))
             if payload.get("data") is None:
                 raise ValueError(f"Invalid vocational cache payload: {path}")
+            relative = str(path.relative_to(ROOT)).replace("\\", "/")
             rows.append(
                 {
                     "source_kind": "vocational_clinical_register",
                     "year": year,
                     "province_slug": slug,
-                    "file_path": str(path.relative_to(ROOT)).replace("\\", "/"),
+                    "file_path": relative,
                     "sha256": sha256(path),
                     "bytes": path.stat().st_size,
                     "source_url": vocational_source_url(year, slug),
                     "official_page_url": "https://zwfw.moe.gov.cn/zyyxzy/",
-                    "accessed_date": accessed,
+                    "accessed_date": access_dates.get(relative, default_accessed),
                 }
             )
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
     with MANIFEST.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(rows[0]),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 
