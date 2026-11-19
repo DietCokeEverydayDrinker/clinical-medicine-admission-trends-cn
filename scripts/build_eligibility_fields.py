@@ -90,6 +90,18 @@ EXPLICIT_VOCATIONAL_BATCH = re.compile(r"专科|高职|普通类二段")
 EXPLICIT_UNDERGRADUATE_BATCH = re.compile(
     r"本科|本一|本二|一本|二本|本科批|本科一批|本科二批|本科三批"
 )
+DEDUP_KEY = [
+    "province",
+    "year",
+    "category",
+    "batch",
+    "university",
+    "major",
+    "major_note",
+    "university_code",
+    "major_code",
+    "major_group",
+]
 
 
 def normalize_institution_name(value: object) -> str:
@@ -523,13 +535,20 @@ def scenario_masks(frame: pd.DataFrame) -> dict[str, pd.Series]:
     undergraduate = frame["program_degree_level"].eq("undergraduate")
     ambiguous = frame["program_degree_level"].eq("ambiguous_dual_offer")
     ordinary = frame["admission_plan_type"].eq("ordinary_regular")
+    primary = frame["primary_eligible_candidate"]
+    exact_unique = ~frame.duplicated()
+    business_unique = ~frame.duplicated(DEDUP_KEY)
     return {
         "current_all_clinical": pd.Series(True, index=frame.index),
         "exclude_special_entry": ~frame["special_entry"],
         "undergraduate_program_only": undergraduate,
-        "ordinary_undergraduate_primary": frame[
-            "primary_eligible_candidate"
-        ],
+        "ordinary_undergraduate_primary": primary,
+        "ordinary_undergraduate_primary_exact_deduplicated": (
+            primary & exact_unique
+        ),
+        "ordinary_undergraduate_primary_business_key_deduplicated": (
+            primary & business_unique
+        ),
         "ordinary_undergraduate_ambiguous_upper_bound": (
             (undergraduate | ambiguous) & ordinary & ~frame["sino_foreign"]
         ),
@@ -546,20 +565,29 @@ def summarize_scenarios(
     for scenario, keep in masks.items():
         selected = frame[keep].copy()
         school_layer, province_layer = analysis.build_analysis_layer(selected)
-        recent = analysis.build_recent_balanced_change(
+        admission_recent = analysis.build_recent_balanced_change(
             school_layer, province_layer
         )
-        all_clinical = recent[
-            recent["track"].eq("all_clinical")
-            & recent["comparison_eligible"]
+        candidate_recent = analysis.build_recent_balanced_change(
+            school_layer,
+            province_layer,
+            metric="candidate_percentile",
+        )
+        admission_all = admission_recent[
+            admission_recent["track"].eq("all_clinical")
+            & admission_recent["comparison_eligible"]
         ]
-        five_year = recent[
-            recent["track"].eq("five_year")
-            & recent["comparison_eligible"]
+        admission_five = admission_recent[
+            admission_recent["track"].eq("five_year")
+            & admission_recent["comparison_eligible"]
         ]
-        eight_year = recent[
-            recent["track"].eq("eight_year")
-            & recent["comparison_eligible"]
+        admission_eight = admission_recent[
+            admission_recent["track"].eq("eight_year")
+            & admission_recent["comparison_eligible"]
+        ]
+        candidate_all = candidate_recent[
+            candidate_recent["track"].eq("all_clinical")
+            & candidate_recent["comparison_eligible"]
         ]
         rows.append(
             {
@@ -567,26 +595,41 @@ def summarize_scenarios(
                 "records_included": len(selected),
                 "records_excluded": int((~keep).sum()),
                 "recent_eligible_provinces_all_clinical": (
-                    all_clinical["province"].nunique()
+                    admission_all["province"].nunique()
                 ),
                 "recent_eligible_provinces_five_year": (
-                    five_year["province"].nunique()
+                    admission_five["province"].nunique()
                 ),
                 "recent_eligible_provinces_eight_year": (
-                    eight_year["province"].nunique()
+                    admission_eight["province"].nunique()
                 ),
-                "mean_all_change_all_clinical": all_clinical[
+                "mean_all_change_all_clinical": admission_all[
                     "all_change"
                 ].mean(),
-                "median_all_change_all_clinical": all_clinical[
+                "median_all_change_all_clinical": admission_all[
                     "all_change"
                 ].median(),
-                "mean_balanced_change_all_clinical": all_clinical[
+                "mean_balanced_change_all_clinical": admission_all[
                     "balanced_change"
                 ].mean(),
-                "median_balanced_change_all_clinical": all_clinical[
+                "median_balanced_change_all_clinical": admission_all[
                     "balanced_change"
                 ].median(),
+                "candidate_eligible_provinces_all_clinical": (
+                    candidate_all["province"].nunique()
+                ),
+                "candidate_mean_all_change_all_clinical": candidate_all[
+                    "all_change"
+                ].mean(),
+                "candidate_median_all_change_all_clinical": candidate_all[
+                    "all_change"
+                ].median(),
+                "candidate_mean_balanced_change_all_clinical": (
+                    candidate_all["balanced_change"].mean()
+                ),
+                "candidate_median_balanced_change_all_clinical": (
+                    candidate_all["balanced_change"].median()
+                ),
             }
         )
     return pd.DataFrame(rows)

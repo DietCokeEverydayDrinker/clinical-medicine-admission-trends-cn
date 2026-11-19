@@ -305,14 +305,16 @@ def build_analysis_layer(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFram
 
 
 def build_recent_balanced_change(
-    school_layer: pd.DataFrame, province_layer: pd.DataFrame
+    school_layer: pd.DataFrame,
+    province_layer: pd.DataFrame,
+    metric: str = "admission_percentile",
 ) -> pd.DataFrame:
     school = school_layer[
-        school_layer["metric"].eq("admission_percentile")
+        school_layer["metric"].eq(metric)
         & school_layer["school_value"].notna()
     ].copy()
     province = province_layer[
-        province_layer["metric"].eq("admission_percentile")
+        province_layer["metric"].eq(metric)
         & province_layer["meets_min_schools"]
     ].copy()
     rows = []

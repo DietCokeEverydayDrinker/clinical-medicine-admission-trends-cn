@@ -24,6 +24,6 @@
   "primary_eligible_candidate_rows": 34484,
   "manual_overrides_applied": 1,
   "source_cache_files_verified": 329,
-  "sensitivity_scenarios": 6,
+  "sensitivity_scenarios": 8,
   "direction_negative_in_all_scenarios": true
 }

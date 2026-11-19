@@ -145,6 +145,8 @@ def main() -> None:
         "exclude_special_entry",
         "undergraduate_program_only",
         "ordinary_undergraduate_primary",
+        "ordinary_undergraduate_primary_exact_deduplicated",
+        "ordinary_undergraduate_primary_business_key_deduplicated",
         "ordinary_undergraduate_ambiguous_upper_bound",
         "ordinary_undergraduate_with_sino_foreign",
     }
@@ -154,6 +156,13 @@ def main() -> None:
     )
     assert (sensitivity["mean_all_change_all_clinical"] < 0).all()
     assert (sensitivity["mean_balanced_change_all_clinical"] < 0).all()
+    assert (
+        sensitivity["candidate_eligible_provinces_all_clinical"].eq(30).all()
+    )
+    assert (sensitivity["candidate_mean_all_change_all_clinical"] < 0).all()
+    assert (
+        sensitivity["candidate_mean_balanced_change_all_clinical"] < 0
+    ).all()
 
     primary_row = sensitivity[
         sensitivity["scenario"].eq("ordinary_undergraduate_primary")
@@ -166,10 +175,41 @@ def main() -> None:
     assert (
         upper_row["records_included"] > primary_row["records_included"]
     )
+    exact_row = sensitivity[
+        sensitivity["scenario"].eq(
+            "ordinary_undergraduate_primary_exact_deduplicated"
+        )
+    ].iloc[0]
+    business_row = sensitivity[
+        sensitivity["scenario"].eq(
+            "ordinary_undergraduate_primary_business_key_deduplicated"
+        )
+    ].iloc[0]
+    assert exact_row["records_included"] == 33_650
+    assert business_row["records_included"] == 33_448
+    assert (
+        exact_row["mean_all_change_all_clinical"] < 0
+        and exact_row["mean_balanced_change_all_clinical"] < 0
+    )
+    assert (
+        business_row["mean_all_change_all_clinical"] < 0
+        and business_row["mean_balanced_change_all_clinical"] < 0
+    )
     assert abs(primary_row["mean_all_change_all_clinical"] - (-10.343571)) < 1e-3
     assert abs(
         primary_row["mean_balanced_change_all_clinical"] - (-0.843894)
     ) < 1e-3
+    assert (
+        abs(primary_row["candidate_mean_all_change_all_clinical"] - (-9.550840))
+        < 1e-3
+    )
+    assert (
+        abs(
+            primary_row["candidate_mean_balanced_change_all_clinical"]
+            - (-3.902529)
+        )
+        < 1e-3
+    )
 
     assert summary["panel_rows"] == len(panel)
     assert summary["manual_program_level_overrides_applied"] == 1
