@@ -1,0 +1,10 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "0",
+    "list": [],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

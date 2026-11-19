@@ -1,0 +1,74 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "7",
+    "list": [
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014012",
+        "school_name": "曲靖医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014013",
+        "school_name": "楚雄医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014014",
+        "school_name": "保山中医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014253",
+        "school_name": "德宏职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014372",
+        "school_name": "昆明卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014413",
+        "school_name": "红河卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "云南省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4153014649",
+        "school_name": "云南医药健康职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

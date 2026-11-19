@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "panel_rows": 36866,
+  "institution_year_pairs": 2819,
+  "vocational_registry_rows": 1397,
+  "program_degree_level_counts": {
+    "undergraduate": 35395,
+    "vocational_three_year": 666,
+    "ambiguous_dual_offer": 298,
+    "unresolved": 507
+  },
+  "admission_plan_type_counts": {
+    "ordinary_regular": 35801,
+    "sino_foreign": 353,
+    "directed_employment": 254,
+    "public_funded_medical": 139,
+    "local_special": 76,
+    "national_special": 76,
+    "ethnic_class": 65,
+    "preparatory": 60,
+    "university_special": 32,
+    "other_special": 10
+  },
+  "primary_eligible_candidate_rows": 34484,
+  "manual_overrides_applied": 1,
+  "source_cache_files_verified": 329,
+  "sensitivity_scenarios": 8,
+  "direction_negative_in_all_scenarios": true,
+  "national_primary_paired_provinces": 30,
+  "national_primary_candidate_declining_provinces": 28
+}

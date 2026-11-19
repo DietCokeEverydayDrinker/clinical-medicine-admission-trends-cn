@@ -1,0 +1,74 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "7",
+    "list": [
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137010442",
+        "school_name": "山东医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137010444",
+        "school_name": "菏泽医学专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137010825",
+        "school_name": "齐鲁医药学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137012844",
+        "school_name": "山东力明科技职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137013009",
+        "school_name": "淄博职业技术大学",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137013322",
+        "school_name": "山东现代学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "山东省",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4137013324",
+        "school_name": "山东协和学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

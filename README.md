@@ -8,7 +8,7 @@
 
 **→ [打开完整报告：结论、方法、图注与数据边界](REPORT.md)**
 
-[完整报告](REPORT.md) | [讨论区](https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn/discussions) | [数据质量审计](DATA_QUALITY_AUDIT.md) | [分析口径](ANALYSIS_METHODS.md) | [全部数值结果](ANALYSIS_RESULTS_FIRST_PASS.md)
+[完整报告](REPORT.md) | [讨论区](https://github.com/DietCokeEverydayDrinker/clinical-medicine-admission-trends-cn/discussions) | [数据质量审计](DATA_QUALITY_AUDIT.md) | [研究纳入资格审计](DATA_ELIGIBILITY_AUDIT.md) | [分析口径](ANALYSIS_METHODS.md) | [全部数值结果](ANALYSIS_RESULTS_FIRST_PASS.md)
 
 ## 先看结论
 
@@ -30,7 +30,7 @@
 
 - 时间：2017-2026 年。
 - 地区：中国大陆 31 个省级行政区。
-- 专业口径：普通本科批临床医学专业最低分或最低位次。
+- 目标专业口径：普通本科批临床医学专业最低分或最低位次。
 - 分析层级：省级专业池百分位、院校年度中介层、固定同校平衡样本。
 - 临床记录：36,866 条。
 - 省年覆盖：310/310 个省年单元至少有一条临床医学记录。
@@ -40,6 +40,13 @@
 - 2026 公开归档来源：其余 25 个省级单位，共 1,157 条临床记录。
 
 310/310 只表示“有记录”，不表示每个省年都有完整专业池。曲线另要求每个省年至少有 3 所院校。
+
+资格字段已按教育部普通高校名单、三年制临床医学专业备案和招生计划层级重建。
+普通本科主候选包含 34,484 条记录；专科、专项/分流、中外合作和 298 条专业
+层次无法区分的记录均单列。30 个可比省级单位中，普通本科主候选的省均变化为
+−10.34 个百分点，固定同校变化为 −0.84 个百分点。将模糊记录全部按本科纳入
+后，省均变化仍为 −10.31 个百分点。详见
+[研究纳入资格审计](DATA_ELIGIBILITY_AUDIT.md)。
 
 ## 核心图件
 
@@ -84,12 +91,21 @@
 .
 ├─ REPORT.md                          # 面向公开阅读的完整报告
 ├─ DATA_QUALITY_AUDIT.md              # 来源、覆盖、缺口和证据等级
+├─ DATA_ELIGIBILITY_AUDIT.md          # 本科层次与招生计划类型的纳入资格审计
 ├─ ANALYSIS_METHODS.md                # 指标和统计方法
 ├─ ANALYSIS_RESULTS_FIRST_PASS.md     # 全部数值结果
 ├─ REPORT_FIGURE_SET.md               # 核心图与支持性图分层
+├─ data/
+│  ├─ manual_program_level_overrides.csv
+│  └─ moe/                             # 教育部来源缓存与哈希清单
 ├─ scripts/
 │  ├─ build_readme_preview.py         # README 首屏报告预览图
+│  ├─ audit_eligibility.py            # 资格标记和 2025-2026 敏感性
+│  ├─ build_eligibility_fields.py     # 专业层次、招生类型与数量口径重建
+│  ├─ build_source_crosswalk.py       # 分析来源与来源清单逐文件对照
 │  ├─ analyze_trends.py               # 临床分析层和图件生成
+│  ├─ fetch_moe_sources.py            # 教育部来源缓存和哈希清单
+│  ├─ validate_eligibility_fields.py  # 资格字段与敏感性自动校验
 │  ├─ validate_trend_analysis.py      # 表和图自动校验
 │  └─ validate_report.py              # 报告链接、图件哈希和措辞边界
 └─ output/
@@ -109,9 +125,14 @@ Python 依赖见 `requirements.txt`。
 python -m venv .venv-analysis
 .\.venv-analysis\Scripts\python.exe -m pip install -r requirements.txt
 
-.\.venv-analysis\Scripts\python.exe -m py_compile scripts\build_readme_preview.py scripts\analyze_trends.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe -m py_compile scripts\build_readme_preview.py scripts\audit_eligibility.py scripts\build_eligibility_fields.py scripts\build_source_crosswalk.py scripts\fetch_moe_sources.py scripts\analyze_trends.py scripts\validate_eligibility_fields.py scripts\validate_trend_analysis.py scripts\validate_report.py
+.\.venv-analysis\Scripts\python.exe scripts\fetch_moe_sources.py
 .\.venv-analysis\Scripts\python.exe scripts\build_readme_preview.py
+.\.venv-analysis\Scripts\python.exe scripts\audit_eligibility.py
+.\.venv-analysis\Scripts\python.exe scripts\build_eligibility_fields.py
+.\.venv-analysis\Scripts\python.exe scripts\build_source_crosswalk.py
 .\.venv-analysis\Scripts\python.exe scripts\analyze_trends.py
+.\.venv-analysis\Scripts\python.exe scripts\validate_eligibility_fields.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_trend_analysis.py
 .\.venv-analysis\Scripts\python.exe scripts\validate_report.py
 ```

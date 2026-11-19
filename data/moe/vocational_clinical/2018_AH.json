@@ -1,0 +1,74 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "7",
+    "list": [
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134012074",
+        "school_name": "阜阳职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134012925",
+        "school_name": "安徽医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134013058",
+        "school_name": "合肥职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134014096",
+        "school_name": "安庆医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134014299",
+        "school_name": "皖西卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134014419",
+        "school_name": "安徽卫生健康职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "安徽省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4134014502",
+        "school_name": "皖北卫生职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

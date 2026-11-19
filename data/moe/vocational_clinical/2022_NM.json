@@ -1,0 +1,47 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "4",
+    "list": [
+      {
+        "prov_name": "内蒙古自治区",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4115010132",
+        "school_name": "内蒙古医科大学",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "内蒙古自治区",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4115012677",
+        "school_name": "锡林郭勒职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "内蒙古自治区",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4115014219",
+        "school_name": "乌兰察布医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "内蒙古自治区",
+        "major_code": "520101K",
+        "major_name": "临床医学",
+        "school_code": "4115014539",
+        "school_name": "扎兰屯职业学院",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}

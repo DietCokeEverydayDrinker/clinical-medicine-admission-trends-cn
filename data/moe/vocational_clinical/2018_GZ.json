@@ -1,0 +1,74 @@
+{
+  "msg": "查询成功",
+  "data": {
+    "total": "7",
+    "list": [
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152011663",
+        "school_name": "黔南民族医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152012821",
+        "school_name": "安顺职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152012822",
+        "school_name": "黔东南民族职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152013055",
+        "school_name": "铜仁职业技术学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152014011",
+        "school_name": "遵义医药高等专科学校",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152014083",
+        "school_name": "贵阳护理职业学院",
+        "school_system": "3",
+        "remark": null
+      },
+      {
+        "prov_name": "贵州省",
+        "major_code": "620101K",
+        "major_name": "临床医学",
+        "school_code": "4152014499",
+        "school_name": "毕节医学高等专科学校",
+        "school_system": "3",
+        "remark": null
+      }
+    ],
+    "currentPage": 1,
+    "pageSize": 50
+  },
+  "success": true
+}
