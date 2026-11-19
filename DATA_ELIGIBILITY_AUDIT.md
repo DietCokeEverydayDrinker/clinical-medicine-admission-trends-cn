@@ -124,6 +124,24 @@
 去重后两个指标的省均变化均未改变。广泛下移的方向对专业层次和重复记录处理
 不敏感；精确幅度仍取决于原始招生计划对模糊记录的最终判定。
 
+## 全国主候选的逐省输出
+
+[`scripts/analyze_national_primary.py`](scripts/analyze_national_primary.py)
+把普通本科主候选的 2025→2026 比较导出为逐省表：
+
+- [`analysis_national_primary_province_changes.csv`](output/analysis_national_primary_province_changes.csv)
+  同时保留专业池、考生分布、全部可用院校、固定同校和来源切换。
+- [`analysis_national_primary_summary.json`](output/analysis_national_primary_summary.json)
+  记录 30 个可比省级单位的省等权汇总与方向计数。
+- [`analysis_national_primary_sensitivity.csv`](output/analysis_national_primary_sensitivity.csv)
+  汇总八个资格、重复和中外合作口径。
+
+主候选在 2025→2026 的省等权结果为：专业池全部院校 −10.34、固定同校 −0.84，
+考生分布全部院校 −9.55、固定同校 −3.90 个百分点。专业池全部院校有 29/30
+个省级单位为负，固定同校为 18/30；考生分布相应为 29/30 和 28/30。固定同校的
+专业池结果在二手来源两端省份接近零均值，说明学校构成和来源切换能够产生很大
+的表观变化。全国结果只描述该观测框架中的投档位置，不能解释为考生总体效应。
+
 ## 自动验证
 
 [`scripts/validate_eligibility_fields.py`](scripts/validate_eligibility_fields.py)
@@ -139,6 +157,7 @@
 - 专业层次、招生计划类型和数量口径均落在预定义集合。
 - 主候选只包含普通常规本科记录。
 - 八个敏感性情形在两个指标中均保持负向变化。
+- 全国主候选逐省表为 30 行，四个省等权均值与敏感性表一致。
 
 ## 尚未解决
 

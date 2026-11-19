@@ -1,0 +1,148 @@
+{
+  "panel_records": 36866,
+  "primary_records": 34484,
+  "excluded_records": 2382,
+  "paired_provinces": 30,
+  "summary": {
+    "programme_pool_available_schools": {
+      "provinces": 30,
+      "mean_pp": -10.343570833333334,
+      "median_pp": -9.661075000000004,
+      "declining_provinces": 29,
+      "increasing_provinces": 1,
+      "unchanged_provinces": 0
+    },
+    "programme_pool_fixed_schools": {
+      "provinces": 30,
+      "mean_pp": -0.843894166666667,
+      "median_pp": -1.4254750000000023,
+      "declining_provinces": 18,
+      "increasing_provinces": 12,
+      "unchanged_provinces": 0
+    },
+    "candidate_distribution_available_schools": {
+      "provinces": 30,
+      "mean_pp": -9.550839999999999,
+      "median_pp": -8.370549999999994,
+      "declining_provinces": 29,
+      "increasing_provinces": 1,
+      "unchanged_provinces": 0
+    },
+    "candidate_distribution_fixed_schools": {
+      "provinces": 30,
+      "mean_pp": -3.9025291666666675,
+      "median_pp": -3.2852499999999907,
+      "declining_provinces": 28,
+      "increasing_provinces": 2,
+      "unchanged_provinces": 0
+    }
+  },
+  "source_transitions": {
+    "A_to_A": {
+      "provinces": 1,
+      "programme_pool_available_schools": {
+        "provinces": 1,
+        "mean_pp": -7.433099999999996,
+        "median_pp": -7.433099999999996,
+        "declining_provinces": 1,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "programme_pool_fixed_schools": {
+        "provinces": 1,
+        "mean_pp": -3.7382999999999953,
+        "median_pp": -3.7382999999999953,
+        "declining_provinces": 1,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_available_schools": {
+        "provinces": 1,
+        "mean_pp": -5.016999999999996,
+        "median_pp": -5.016999999999996,
+        "declining_provinces": 1,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_fixed_schools": {
+        "provinces": 1,
+        "mean_pp": -2.6118999999999915,
+        "median_pp": -2.6118999999999915,
+        "declining_provinces": 1,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      }
+    },
+    "B_to_A": {
+      "provinces": 5,
+      "programme_pool_available_schools": {
+        "provinces": 5,
+        "mean_pp": -6.714855,
+        "median_pp": -6.677599999999998,
+        "declining_provinces": 5,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "programme_pool_fixed_schools": {
+        "provinces": 5,
+        "mean_pp": -6.135920000000004,
+        "median_pp": -6.574600000000004,
+        "declining_provinces": 5,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_available_schools": {
+        "provinces": 5,
+        "mean_pp": -3.418844999999999,
+        "median_pp": -3.691625000000002,
+        "declining_provinces": 5,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_fixed_schools": {
+        "provinces": 5,
+        "mean_pp": -3.1638949999999992,
+        "median_pp": -3.6691000000000003,
+        "declining_provinces": 5,
+        "increasing_provinces": 0,
+        "unchanged_provinces": 0
+      }
+    },
+    "B_to_B": {
+      "provinces": 24,
+      "programme_pool_available_schools": {
+        "provinces": 24,
+        "mean_pp": -11.220822916666668,
+        "median_pp": -12.228774999999995,
+        "declining_provinces": 23,
+        "increasing_provinces": 1,
+        "unchanged_provinces": 0
+      },
+      "programme_pool_fixed_schools": {
+        "provinces": 24,
+        "mean_pp": 0.3792114583333337,
+        "median_pp": 0.04237499999999983,
+        "declining_provinces": 12,
+        "increasing_provinces": 12,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_available_schools": {
+        "provinces": 24,
+        "mean_pp": -11.017248958333333,
+        "median_pp": -9.043925000000002,
+        "declining_provinces": 23,
+        "increasing_provinces": 1,
+        "unchanged_provinces": 0
+      },
+      "candidate_distribution_fixed_schools": {
+        "provinces": 24,
+        "mean_pp": -4.110187500000001,
+        "median_pp": -3.2852499999999907,
+        "declining_provinces": 22,
+        "increasing_provinces": 2,
+        "unchanged_provinces": 0
+      }
+    }
+  },
+  "direction": "negative values mean a lower programme-pool percentile or a lower candidate-distribution percentile in 2026"
+}

@@ -19,6 +19,8 @@ MATCHES = OUTPUT / "clinical_institution_degree_registry.csv"
 VOCATIONAL = OUTPUT / "clinical_vocational_clinical_registry.csv"
 SENSITIVITY = OUTPUT / "analysis_program_eligibility_sensitivity.csv"
 SUMMARY = OUTPUT / "clinical_program_eligibility_summary.json"
+NATIONAL_PROVINCES = OUTPUT / "analysis_national_primary_province_changes.csv"
+NATIONAL_SUMMARY = OUTPUT / "analysis_national_primary_summary.json"
 VALIDATION = OUTPUT / "clinical_eligibility_validation.json"
 SOURCE_MANIFEST = ROOT / "data" / "moe" / "moe_source_manifest.csv"
 
@@ -63,6 +65,10 @@ def main() -> None:
     vocational = pd.read_csv(VOCATIONAL, low_memory=False)
     sensitivity = pd.read_csv(SENSITIVITY)
     summary = json.loads(SUMMARY.read_text(encoding="utf-8"))
+    national_provinces = pd.read_csv(NATIONAL_PROVINCES)
+    national_summary = json.loads(
+        NATIONAL_SUMMARY.read_text(encoding="utf-8")
+    )
     with SOURCE_MANIFEST.open(encoding="utf-8-sig", newline="") as handle:
         source_manifest = list(csv.DictReader(handle))
 
@@ -211,6 +217,26 @@ def main() -> None:
         < 1e-3
     )
 
+    assert len(national_provinces) == 30
+    assert national_provinces["province"].is_unique
+    assert national_summary["panel_records"] == len(panel)
+    assert national_summary["primary_records"] == 34_484
+    assert national_summary["paired_provinces"] == 30
+    national_expected = {
+        "programme_pool_available_schools": (-10.343571, 29),
+        "programme_pool_fixed_schools": (-0.843894, 18),
+        "candidate_distribution_available_schools": (-9.550840, 29),
+        "candidate_distribution_fixed_schools": (-3.902529, 28),
+    }
+    for name, (expected_mean, expected_declining) in national_expected.items():
+        metric = national_summary["summary"][name]
+        assert abs(metric["mean_pp"] - expected_mean) < 1e-3
+        assert metric["declining_provinces"] == expected_declining
+    assert {
+        name: national_summary["source_transitions"][name]["provinces"]
+        for name in ("A_to_A", "B_to_A", "B_to_B")
+    } == {"A_to_A": 1, "B_to_A": 5, "B_to_B": 24}
+
     assert summary["panel_rows"] == len(panel)
     assert summary["manual_program_level_overrides_applied"] == 1
     assert summary["program_degree_level_counts"] == expected_program_counts
@@ -229,6 +255,12 @@ def main() -> None:
         "source_cache_files_verified": len(source_manifest),
         "sensitivity_scenarios": len(sensitivity),
         "direction_negative_in_all_scenarios": True,
+        "national_primary_paired_provinces": len(national_provinces),
+        "national_primary_candidate_declining_provinces": (
+            national_summary["summary"][
+                "candidate_distribution_fixed_schools"
+            ]["declining_provinces"]
+        ),
     }
     VALIDATION.write_text(
         json.dumps(result, ensure_ascii=False, indent=2),
